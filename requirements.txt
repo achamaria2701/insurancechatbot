@@ -1,1 +1,5 @@
+openai
+pandas
+regex
+streamlit
 -e .
