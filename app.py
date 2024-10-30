@@ -64,15 +64,16 @@ if user_input:
                     st.markdown("Sorry, the message has been flagged by the system. Connecting you to human expert.")
                 st.stop()
             
-            st.session_state.messages.append({
-                'role': 'assistant',
-                'content': response_assitant
-            })
-
-            with st.chat_message("assistant"):
-                st.markdown(response_assitant)
+            
             
             if "No" in confirmation:
+                st.session_state.messages.append({
+                'role': 'assistant',
+                'content': response_assitant
+                })
+
+                with st.chat_message("assistant"):
+                    st.markdown(response_assitant)
                 st.session_state.conversation.append({"role": "assistant", "content": response_assitant})
                 
             else:
